@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="webshopapp.View.UsersManagePage"
+            xmlns:model="clr-namespace:webshopapp.Models"
+            xmlns:viewmodel="clr-namespace:webshopapp.ViewModel"
+            x:DataType="viewmodel:UsersManageViewModel"  
+            Title="{Binding Title}">
+
+    <Grid
+    ColumnDefinitions="*,*,*"
+    ColumnSpacing="10"
+    RowDefinitions="*,Auto"
+    RowSpacing="0">
+        <CollectionView
+            Grid.ColumnSpan="3"
+            ItemsSource="{Binding Users}"
+            SelectionMode="None">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Users">
+                    <Grid Padding="10">
+                        <Frame HeightRequest="125" Style="{StaticResource CardView}">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer CommandParameter="{Binding .}"
+                                                  Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:UsersManageViewModel}},Path=GetUserCommand}"/>
+                            </Frame.GestureRecognizers>
+                            <Grid Padding="0" ColumnDefinitions="125,*">
+
+                                <VerticalStackLayout
+                                Grid.Column="1"
+                                Padding="10">
+                                    <Label Style="{StaticResource LargeLabel}" Text="Username" />
+                                    <Label Style="{StaticResource LargeLabel}" Text="{Binding username}" />
+                                    <Label Style="{StaticResource LargeLabel}" Text="Role:" />
+                                    <Label Style="{StaticResource MediumLabel}" Text="{Binding role}" />
+
+                                </VerticalStackLayout>
+                            </Grid>
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button     Grid.Row="1"
+                    Grid.Column="2"
+                    Text="Go Back"
+                    Style="{StaticResource ButtonOutline}"
+                    Command="{Binding GoBackCommand}" />
+        <ActivityIndicator IsVisible="{Binding IsBusy}"
+                        IsRunning="{Binding IsBusy}"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        Grid.RowSpan="2"
+                        Grid.ColumnSpan="2"/>
+    </Grid>
+</ContentPage>
+

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="webshopapp.View.UsersPage"
+             Title="UsersPage"
+             xmlns:viewmodel="clr-namespace:webshopapp.ViewModel"
+             x:DataType="viewmodel:UsersViewModel"
+             xmlns:view="clr-namespace:webshopapp.View"
+             xmlns:model="clr-namespace:webshopapp.Models" 
+             xmlns:local="clr-namespace:webshopapp.View"
+             xmlns:android="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls"
+             android:TabbedPage.ToolbarPlacement="Default">
+
+        <Grid
+        ColumnDefinitions="*,Auto"
+        ColumnSpacing="5"
+        RowDefinitions="*,Auto"
+        RowSpacing="0">
+            <CollectionView
+                ItemsSource="{Binding User}"
+                SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Users">
+                        <Grid Padding="10">
+                            <Frame HeightRequest="125" Style="{StaticResource CardView}">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                     Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:UsersManageViewModel}}, Path=GetUserCommand}"
+                                        CommandParameter="{Binding .}"/>
+                                </Frame.GestureRecognizers>
+                            <Grid Padding="0" ColumnDefinitions="125,*">
+                                <VerticalStackLayout
+                                    Grid.Column="1"
+                                    Padding="10">
+                                        <HorizontalStackLayout Spacing="50">
+                                            <Label Style="{StaticResource SmallLabel}" Text="Username:" />
+                                            <Label Style="{StaticResource SmallLabel}" Text="{Binding username}" />
+                                        </HorizontalStackLayout>
+                                        <HorizontalStackLayout Spacing="15">
+                                            <Label Style="{StaticResource MicroLabel}" Text="Role:" />
+                                            <Label Style="{StaticResource MicroLabel}" Text="{Binding role}" />
+                                        </HorizontalStackLayout>
+                                        <HorizontalStackLayout Spacing="60">
+                                            <Label Style="{StaticResource MicroLabel}" Text="Street:" />
+                                            <Label Style="{StaticResource MicroLabel}" Text="{Binding street}" />
+                                        </HorizontalStackLayout>
+                                        <HorizontalStackLayout Spacing="30">
+                                            <Label Style="{StaticResource MicroLabel}" Text="Housenumber:" />
+                                            <Label Style="{StaticResource MicroLabel}" Text="{Binding houseNumber}"/>
+                                        </HorizontalStackLayout>
+                                    <HorizontalStackLayout Spacing="30">
+                                        <Label Style="{StaticResource MicroLabel}" Text="City:" />
+                                        <Label Style="{StaticResource MicroLabel}" Text="{Binding city}"/>
+                                    </HorizontalStackLayout>
+                                    <HorizontalStackLayout Spacing="30">
+                                        <Label Style="{StaticResource MicroLabel}" Text="Zipcode:" />
+                                        <Label Style="{StaticResource MicroLabel}" Text="{Binding zipcode}"/>
+                                    </HorizontalStackLayout>
+                                </VerticalStackLayout>
+                                </Grid>
+                            </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button Text="Get Users" 
+                Command="{Binding GetUsersCommand}"
+                IsEnabled="{Binding IsNotBusy}"
+                Grid.Row="1"
+                Grid.Column="0"
+                Style="{StaticResource ButtonOutline}"
+                Margin="8"/>
+
+            <ActivityIndicator IsVisible="{Binding IsBusy}"
+                           IsRunning="{Binding IsBusy}"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           Grid.RowSpan="2"
+                           Grid.ColumnSpan="2"/>
+        </Grid>
+
+
+</ContentPage>

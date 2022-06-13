@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+             x:Class="webshopapp.View.DetailsPage"         
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:webshopapp.ViewModel"
+             x:DataType="viewmodel:ProductDetailsViewModel"
+             Title="{Binding Product.name}">
+    <ScrollView>
+        <VerticalStackLayout>
+            <Grid ColumnDefinitions="*,Auto,*" RowDefinitions="160,Auto">
+                <BoxView
+                    Grid.ColumnSpan="3"
+                    Background="{StaticResource Primary}"
+                    HeightRequest="160"
+                    HorizontalOptions="FillAndExpand" />
+                <Frame
+                        Grid.RowSpan="2"
+                        Grid.Column="1"
+                        Margin="0,80,0,0"
+                        HorizontalOptions="Center" 
+                        Padding="0"
+                        HeightRequest="160"
+                        IsClippedToBounds="True">
+                <Image
+                        Aspect="AspectFill"
+                        HeightRequest="160"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Source="{Binding Product.property1}"
+                        />
+                </Frame>
+            </Grid>
+                <VerticalStackLayout
+                       Grid.Column="1"
+                       Padding="10">
+                    <HorizontalStackLayout Spacing="50">
+                        <Label Style="{StaticResource SmallLabel}" Text="Name:" />
+                        <Label Style="{StaticResource SmallLabel}" Text="{Binding Product.name}" />
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout Spacing="15">
+                        <Label Style="{StaticResource MicroLabel}" Text="Available since:" />
+                        <Label Style="{StaticResource MicroLabel}" Text="{Binding Product.availableSince}" />
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout Spacing="60">
+                        <Label Style="{StaticResource MicroLabel}" Text="Price:" />
+                        <Label Style="{StaticResource MicroLabel}" Text="{Binding Product.price, StringFormat='€{0}'}" />
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout Spacing="30">
+                        <Label Style="{StaticResource MicroLabel}" Text="Is available:" />
+                        <Label Style="{StaticResource MicroLabel}" Text="{Binding Product.isAvailable}"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

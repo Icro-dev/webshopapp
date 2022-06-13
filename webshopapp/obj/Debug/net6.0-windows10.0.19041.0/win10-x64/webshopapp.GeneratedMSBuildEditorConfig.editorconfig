@@ -1,0 +1,70 @@
+is_global = true
+build_property.TargetFramework = net6.0-windows10.0.19041.0
+build_property.TargetPlatformMinVersion = 10.0.17763.0
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 9A19103F-16F7-4668-BE54-9A1E7A4F7556
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = webshopapp
+build_property.ProjectDir = H:\webshopapp\webshopapp\webshopapp\
+
+[H:/webshopapp/webshopapp/webshopapp/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = webshopapp.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[H:/webshopapp/webshopapp/webshopapp/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = webshopapp.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[H:/webshopapp/webshopapp/webshopapp/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = webshopapp.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[H:/webshopapp/webshopapp/webshopapp/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = webshopapp.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[H:/webshopapp/webshopapp/webshopapp/View/DetailsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = webshopapp.View.DetailsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\DetailsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\DetailsPage.xaml
+
+[H:/webshopapp/webshopapp/webshopapp/View/LoginPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = webshopapp.View.LoginPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\LoginPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\LoginPage.xaml
+
+[H:/webshopapp/webshopapp/webshopapp/View/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = webshopapp.View.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\MainPage.xaml
+
+[H:/webshopapp/webshopapp/webshopapp/View/UsersManagePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = webshopapp.View.UsersManagePage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\UsersManagePage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\UsersManagePage.xaml
+
+[H:/webshopapp/webshopapp/webshopapp/View/UsersPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = webshopapp.View.UsersPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\UsersPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\UsersPage.xaml
+
+[H:/webshopapp/webshopapp/webshopapp/View/UsersRegistrationPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = webshopapp.View.UsersRegistrationPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\UsersRegistrationPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\UsersRegistrationPage.xaml

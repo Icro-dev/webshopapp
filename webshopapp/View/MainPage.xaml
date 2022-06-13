@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+             x:Class="webshopapp.View.MainPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:webshopapp.Models"
+             xmlns:viewmodel="clr-namespace:webshopapp.ViewModel"
+             x:DataType="viewmodel:ProductsViewModel"
+             Title="{Binding Title}">
+
+    <Grid
+        ColumnDefinitions="*,Auto"
+        ColumnSpacing="5"
+        RowDefinitions="*,Auto"
+        RowSpacing="0">
+        <CollectionView
+                ItemsSource="{Binding Products}"
+                SelectionMode="None">
+                <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="model:Product">
+                <Grid Padding="10">
+                    <Frame HeightRequest="125" Style="{StaticResource CardView}">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer
+                                     Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ProductsViewModel}}, Path=GoToDetailsCommand}"
+                                        CommandParameter="{Binding .}"/>
+                            </Frame.GestureRecognizers>
+                        <Grid Padding="0" ColumnDefinitions="125,*">
+                            <Image Aspect="AspectFill" Source="{Binding property1}"
+                                       WidthRequest="125"
+                                       HeightRequest="125"/>
+                                <VerticalStackLayout
+                                    Grid.Column="1"
+                                    Padding="10">
+                                    <HorizontalStackLayout Spacing="50">
+                                        <Label Style="{StaticResource SmallLabel}" Text="Name:" />
+                                        <Label Style="{StaticResource SmallLabel}" Text="{Binding name}" />
+                                    </HorizontalStackLayout>
+                                    <HorizontalStackLayout Spacing="15">
+                                        <Label Style="{StaticResource MicroLabel}" Text="Available since:" />
+                                        <Label Style="{StaticResource MicroLabel}" Text="{Binding availableSince}" />
+                                    </HorizontalStackLayout>
+                                    <HorizontalStackLayout Spacing="60">
+                                        <Label Style="{StaticResource MicroLabel}" Text="Price:" />
+                                        <Label Style="{StaticResource MicroLabel}" Text="{Binding price, StringFormat='€{0}'}" />
+                                    </HorizontalStackLayout>
+                                    <HorizontalStackLayout Spacing="30">
+                                        <Label Style="{StaticResource MicroLabel}" Text="Is available:" />
+                                        <Label Style="{StaticResource MicroLabel}" Text="{Binding isAvailable}"/>
+                                    </HorizontalStackLayout>
+                                </VerticalStackLayout>
+                        </Grid>
+                    </Frame>
+                </Grid>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+      <Button Text="Get Products" 
+                Command="{Binding GetProductsCommand}"
+                IsEnabled="{Binding IsNotBusy}"
+                Grid.Row="1"
+                Grid.Column="0"
+                Style="{StaticResource ButtonOutline}"
+                Margin="8"/>
+    
+        <ActivityIndicator IsVisible="{Binding IsBusy}"
+                           IsRunning="{Binding IsBusy}"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           Grid.RowSpan="2"
+                           Grid.ColumnSpan="2"/>
+    </Grid>
+</ContentPage>

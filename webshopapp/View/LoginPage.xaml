@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="webshopapp.View.LoginPage"
+             xmlns:local="clr-namespace:webshopapp"
+             x:DataType="viewmodel:LoginViewModel"
+             xmlns:model="clr-namespace:webshopapp.Models"
+             xmlns:viewmodel="clr-namespace:webshopapp.ViewModel"
+             Title="{Binding Title}">
+    <Grid
+        
+        ColumnDefinitions="*"
+        ColumnSpacing="5"
+        RowDefinitions="100,Auto,Auto"
+        RowSpacing="0">
+        <ScrollView Grid.Column="0"
+                    Grid.Row="1">
+            <VerticalStackLayout Grid.Column="0">
+                <Label Text="Username" Style="{StaticResource SmallLabel}" WidthRequest="200"/>
+                <Entry
+                Text="{Binding username}"
+                WidthRequest="200"
+                Style="{StaticResource BaseEntry}"/>
+
+                <Label Text="Password" Style="{StaticResource SmallLabel}" WidthRequest="200"/>
+                <Entry Placeholder="Wachtwoord1!"
+                       IsPassword="True"
+                       Text="{Binding password}"
+                       WidthRequest="200"
+                       Style="{StaticResource BaseEntry}"/>
+
+                <Button Text="Log in" 
+                Command="{Binding LogIn}"
+                IsEnabled="{Binding IsNotBusy}"
+                Grid.Row="1"
+                Grid.Column="0"
+                Style="{StaticResource ButtonOutline}"
+                Margin="5"
+                WidthRequest="200"/>
+
+                <Button Text="Register" 
+                Command="{Binding Register}"
+                IsEnabled="{Binding IsNotBusy}"
+                Grid.Row="1"
+                Grid.Column="0"
+                Style="{StaticResource ButtonOutline}"
+                Margin="5"
+                WidthRequest="200"/>
+            </VerticalStackLayout>
+
+        </ScrollView>
+
+
+        <ActivityIndicator IsVisible="{Binding IsBusy}"
+                           IsRunning="{Binding IsBusy}"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           Grid.RowSpan="2"
+                           Grid.ColumnSpan="2"/>
+    </Grid>
+</ContentPage>
+
