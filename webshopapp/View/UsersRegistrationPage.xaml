@@ -8,9 +8,9 @@
              Title="UsersRegistrationPage">
     <Grid
         
-        ColumnDefinitions="*,*"
+        ColumnDefinitions="*"
         ColumnSpacing="5"
-        RowDefinitions="200,*,Auto"
+        RowDefinitions="100,*,Auto"
         RowSpacing="0">
         
         <ScrollView Grid.Column="0"

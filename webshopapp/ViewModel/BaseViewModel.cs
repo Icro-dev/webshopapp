@@ -25,6 +25,8 @@ public partial class BaseViewModel : ObservableObject
     public bool isLoggedIn => Preferences.Get("isLoggedIn", false);
     public bool isNotLoggedIn => !isLoggedIn;
 
+  /*  public long CartId => Preferences.Get("CartId", CartId);*/
+
     [ICommand]
     async Task GoBack()
     {

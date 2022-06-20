@@ -16,5 +16,6 @@ public partial class MainPage : ContentPage
     {
         base.OnNavigatedTo(args);
     }
+
 }
 

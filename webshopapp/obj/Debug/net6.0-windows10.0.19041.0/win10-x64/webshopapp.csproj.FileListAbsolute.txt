@@ -26,8 +26,14 @@ H:\webshopapp\webshopapp\webshopapp\bin\Debug\net6.0-windows10.0.19041.0\win10-x
 H:\webshopapp\webshopapp\webshopapp\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Microsoft.Windows.ApplicationModel.WindowsAppRuntime.Projection.dll
 H:\webshopapp\webshopapp\webshopapp\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Microsoft.Windows.System.Power.Projection.dll
 H:\webshopapp\webshopapp\webshopapp\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Microsoft.WindowsAppRuntime.Bootstrap.Net.dll
+H:\webshopapp\webshopapp\webshopapp\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\SQLite-net.dll
+H:\webshopapp\webshopapp\webshopapp\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\SQLitePCLRaw.batteries_v2.dll
+H:\webshopapp\webshopapp\webshopapp\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\SQLitePCLRaw.nativelibrary.dll
+H:\webshopapp\webshopapp\webshopapp\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\SQLitePCLRaw.core.dll
+H:\webshopapp\webshopapp\webshopapp\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\SQLitePCLRaw.provider.dynamic_cdecl.dll
 H:\webshopapp\webshopapp\webshopapp\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Microsoft.Graphics.Canvas.dll
 H:\webshopapp\webshopapp\webshopapp\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Microsoft.WindowsAppRuntime.Bootstrap.dll
+H:\webshopapp\webshopapp\webshopapp\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\e_sqlite3.dll
 H:\webshopapp\webshopapp\webshopapp\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Microsoft.CSharp.dll
 H:\webshopapp\webshopapp\webshopapp\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Microsoft.VisualBasic.Core.dll
 H:\webshopapp\webshopapp\webshopapp\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Microsoft.VisualBasic.dll
@@ -250,7 +256,7 @@ H:\webshopapp\webshopapp\webshopapp\bin\Debug\net6.0-windows10.0.19041.0\win10-x
 H:\webshopapp\webshopapp\webshopapp\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\hostfxr.dll
 H:\webshopapp\webshopapp\webshopapp\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\hostpolicy.dll
 H:\webshopapp\webshopapp\webshopapp\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\mscordaccore.dll
-H:\webshopapp\webshopapp\webshopapp\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\mscordaccore_amd64_amd64_6.0.522.21309.dll
+H:\webshopapp\webshopapp\webshopapp\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\mscordaccore_amd64_amd64_6.0.622.26707.dll
 H:\webshopapp\webshopapp\webshopapp\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\mscordbi.dll
 H:\webshopapp\webshopapp\webshopapp\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\mscorrc.dll
 H:\webshopapp\webshopapp\webshopapp\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\msquic.dll

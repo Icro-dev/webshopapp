@@ -33,6 +33,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = webshopapp.Resources.Style
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
+[H:/webshopapp/webshopapp/webshopapp/View/CartPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = webshopapp.View.CartPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\CartPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\CartPage.xaml
+
 [H:/webshopapp/webshopapp/webshopapp/View/DetailsPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = webshopapp.View.DetailsPage.xaml

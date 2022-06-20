@@ -5,7 +5,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodel="clr-namespace:webshopapp.ViewModel"
              x:DataType="viewmodel:ProductDetailsViewModel"
-             Title="{Binding Product.name}">
+             Title="{Binding Product.Name}">
     <ScrollView>
         <VerticalStackLayout>
             <Grid ColumnDefinitions="*,Auto,*" RowDefinitions="160,Auto">
@@ -27,7 +27,7 @@
                         HeightRequest="160"
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
-                        Source="{Binding Product.property1}"
+                        Source="{Binding Product.Property1}"
                         />
                 </Frame>
             </Grid>
@@ -36,19 +36,19 @@
                        Padding="10">
                     <HorizontalStackLayout Spacing="50">
                         <Label Style="{StaticResource SmallLabel}" Text="Name:" />
-                        <Label Style="{StaticResource SmallLabel}" Text="{Binding Product.name}" />
+                        <Label Style="{StaticResource SmallLabel}" Text="{Binding Product.Name}" />
                     </HorizontalStackLayout>
                     <HorizontalStackLayout Spacing="15">
                         <Label Style="{StaticResource MicroLabel}" Text="Available since:" />
-                        <Label Style="{StaticResource MicroLabel}" Text="{Binding Product.availableSince}" />
+                        <Label Style="{StaticResource MicroLabel}" Text="{Binding Product.AvailableSince}" />
                     </HorizontalStackLayout>
                     <HorizontalStackLayout Spacing="60">
                         <Label Style="{StaticResource MicroLabel}" Text="Price:" />
-                        <Label Style="{StaticResource MicroLabel}" Text="{Binding Product.price, StringFormat='€{0}'}" />
+                        <Label Style="{StaticResource MicroLabel}" Text="{Binding Product.Price, StringFormat='€{0}'}" />
                     </HorizontalStackLayout>
                     <HorizontalStackLayout Spacing="30">
                         <Label Style="{StaticResource MicroLabel}" Text="Is available:" />
-                        <Label Style="{StaticResource MicroLabel}" Text="{Binding Product.isAvailable}"/>
+                        <Label Style="{StaticResource MicroLabel}" Text="{Binding Product.IsAvailable}"/>
                     </HorizontalStackLayout>
                 </VerticalStackLayout>
 

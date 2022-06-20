@@ -63,15 +63,15 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <Button Text="Get Users" 
+        <Button Text="Get Users" 
                 Command="{Binding GetUsersCommand}"
                 IsEnabled="{Binding IsNotBusy}"
                 Grid.Row="1"
-                Grid.Column="0"
+                Grid.Column="1"
                 Style="{StaticResource ButtonOutline}"
                 Margin="8"/>
 
-            <ActivityIndicator IsVisible="{Binding IsBusy}"
+        <ActivityIndicator IsVisible="{Binding IsBusy}"
                            IsRunning="{Binding IsBusy}"
                            HorizontalOptions="FillAndExpand"
                            VerticalOptions="CenterAndExpand"

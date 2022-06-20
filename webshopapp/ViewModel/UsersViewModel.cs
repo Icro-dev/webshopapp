@@ -17,7 +17,7 @@ namespace webshopapp.ViewModel
 
 
         public string username = Preferences.Get("usernamePref", "");
-        public bool isLoggedIn = Preferences.Get("isLoggedIn", true);
+        
 
 
         public UsersViewModel(UsersService usersService)
@@ -55,33 +55,6 @@ namespace webshopapp.ViewModel
             {
                 IsBusy = false;
             }
-           /* {
-                    UsersManageViewModel usersManageViewModel = new UsersManageViewModel();
-
-                    var user = await usersService.GetUser(username);
-                    usersManageViewModel.User = user;
-                    await Shell.Current.GoToAsync(nameof(UsersManagePage), true,
-                    new Dictionary<string, object>
-                        {
-                        { "UsersManageViewModel", usersManageViewModel }
-                    });
-
-                }
-                else
-                {
-                    await Shell.Current.GoToAsync(nameof(UsersManagePage));
-                }
-
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-                await Shell.Current.DisplayAlert("Error!", $"Unable to get users: {ex.Message}", "OK");
-            }
-            finally
-            {
-                IsBusy = false;
-            }*/
         }
 
     }

@@ -11,57 +11,115 @@
     <Grid
         ColumnDefinitions="*,Auto"
         ColumnSpacing="5"
-        RowDefinitions="*,Auto"
+        RowDefinitions="*,Auto,Auto,Auto,Auto"
         RowSpacing="0">
         <CollectionView
                 ItemsSource="{Binding Products}"
                 SelectionMode="None">
-                <CollectionView.ItemTemplate>
-            <DataTemplate x:DataType="model:Product">
-                <Grid Padding="10">
-                    <Frame HeightRequest="125" Style="{StaticResource CardView}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Product">
+                    <Grid Padding="10">
+                        <Frame HeightRequest="125" Style="{StaticResource CardView}">
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer
                                      Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ProductsViewModel}}, Path=GoToDetailsCommand}"
                                         CommandParameter="{Binding .}"/>
                             </Frame.GestureRecognizers>
-                        <Grid Padding="0" ColumnDefinitions="125,*">
-                            <Image Aspect="AspectFill" Source="{Binding property1}"
-                                       WidthRequest="125"
+                            <Grid Padding="0" ColumnDefinitions="200,Auto, Auto">
+                                <Image Aspect="AspectFill" Source="{Binding Property1}"
+                                       WidthRequest="170"
                                        HeightRequest="125"/>
                                 <VerticalStackLayout
                                     Grid.Column="1"
                                     Padding="10">
                                     <HorizontalStackLayout Spacing="50">
                                         <Label Style="{StaticResource SmallLabel}" Text="Name:" />
-                                        <Label Style="{StaticResource SmallLabel}" Text="{Binding name}" />
+                                        <Label Style="{StaticResource SmallLabel}" Text="{Binding Name}" />
                                     </HorizontalStackLayout>
                                     <HorizontalStackLayout Spacing="15">
                                         <Label Style="{StaticResource MicroLabel}" Text="Available since:" />
-                                        <Label Style="{StaticResource MicroLabel}" Text="{Binding availableSince}" />
+                                        <Label Style="{StaticResource MicroLabel}" Text="{Binding AvailableSince}" />
                                     </HorizontalStackLayout>
                                     <HorizontalStackLayout Spacing="60">
                                         <Label Style="{StaticResource MicroLabel}" Text="Price:" />
-                                        <Label Style="{StaticResource MicroLabel}" Text="{Binding price, StringFormat='€{0}'}" />
+                                        <Label Style="{StaticResource MicroLabel}" Text="{Binding Price, StringFormat='€{0}'}" />
                                     </HorizontalStackLayout>
                                     <HorizontalStackLayout Spacing="30">
                                         <Label Style="{StaticResource MicroLabel}" Text="Is available:" />
-                                        <Label Style="{StaticResource MicroLabel}" Text="{Binding isAvailable}"/>
+                                        <Label Style="{StaticResource MicroLabel}" Text="{Binding IsAvailable}"/>
                                     </HorizontalStackLayout>
                                 </VerticalStackLayout>
-                        </Grid>
-                    </Frame>
-                </Grid>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-    </CollectionView>
-      <Button Text="Get Products" 
-                Command="{Binding GetProductsCommand}"
+                                <HorizontalStackLayout 
+                                    Spacing="50"
+                                    Grid.Column="2"
+                                    Padding="10">
+                                    <Button Text="Add to cart"
+                                            FontSize="10"
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ProductsViewModel}}, Path=AddProductToCartCommand}"
+                                            CommandParameter="{Binding .}"
+                                            Grid.Row="2"
+                                            Grid.Column="0"
+                                            WidthRequest="100"
+                                            HeightRequest="50"    
+                                            Style="{StaticResource ButtonOutline}"
+                                            Margin="2"/>
+                                    <Button Text="Add to wishlist"
+                                            FontSize="10"
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ProductsViewModel}}, Path=AddProductToCartCommand}"
+                                            CommandParameter="{Binding .}"
+                                            Grid.Row="2"
+                                            Grid.Column="0"
+                                            WidthRequest="100"
+                                            HeightRequest="50"    
+                                            Style="{StaticResource ButtonOutline}"
+                                            Margin="2"/>
+                                    <Button Text="Compare"
+                                            FontSize="10"
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ProductsViewModel}}, Path=AddProductToCartCommand}"
+                                            CommandParameter="{Binding .}"
+                                            Grid.Row="2"
+                                            Grid.Column="0"
+                                            WidthRequest="100"
+                                            HeightRequest="50"    
+                                            Style="{StaticResource ButtonOutline}"
+                                            Margin="2"/>
+                                </HorizontalStackLayout>
+                            </Grid>
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Text="Show Cart" 
+                Command="{Binding ShowCartCommand}"
                 IsEnabled="{Binding IsNotBusy}"
                 Grid.Row="1"
                 Grid.Column="0"
                 Style="{StaticResource ButtonOutline}"
-                Margin="8"/>
+                Margin="2"/>
+        <Button Text="Add to wishlist" 
+                Command="{Binding GetProductsCommand}"
+                IsEnabled="{Binding IsNotBusy}"
+                Grid.Row="2"
+                Grid.Column="0"
+                Style="{StaticResource ButtonOutline}"
+                Margin="2"/>
+
+        <Button Text="Compare products" 
+                Command="{Binding GetProductsCommand}"
+                IsEnabled="{Binding IsNotBusy}"
+                Grid.Row="3"
+                Grid.Column="0"
+                Style="{StaticResource ButtonOutline}"
+                Margin="2"/>
+
+        <Button Text="Get Products" 
+                Command="{Binding GetProductsCommand}"
+                IsEnabled="{Binding IsNotBusy}"
+                Grid.Row="4"
+                Grid.Column="0"
+                Style="{StaticResource ButtonOutline}"
+                Margin="2"/>
     
         <ActivityIndicator IsVisible="{Binding IsBusy}"
                            IsRunning="{Binding IsBusy}"

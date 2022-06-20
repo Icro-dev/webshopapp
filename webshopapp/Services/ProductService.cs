@@ -12,12 +12,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Text.Json;
 using System.Diagnostics;
+using webshopapp.Helpers;
 
 namespace webshopapp.Services;
 
 public class ProductService
 {
     HttpClient httpClient;
+    static string BaseUrl = DeviceInfoHelper.BaseUrl;
+    public string Url = $"{BaseUrl}/Products";
 
     public ProductService()
     {
@@ -41,4 +44,20 @@ public class ProductService
 
         return productList;
     }
+
+    public async Task <Product> GetProduct(long productsId)
+    {
+            var product = new Product();
+            var url = $"{Url}/{productsId}";
+
+            var response = await httpClient.GetAsync(url);
+            Debug.WriteLine(response);
+            if (response.IsSuccessStatusCode)
+            {
+            product = await response.Content.ReadFromJsonAsync<Product>();
+            }
+
+            return product;
+    }
 }
+

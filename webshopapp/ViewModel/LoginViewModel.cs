@@ -48,6 +48,11 @@ namespace webshopapp.ViewModel
                 Preferences.Set("username", userDB.username);
                 Preferences.Set("isLoggedIn", true);
 
+                if(userDB.role == "Admin")
+                {
+                    Preferences.Set("isAdmin", true);
+                }
+
                 await Shell.Current.DisplayAlert("Login succesful", $"Succes!", "OK");
 
                 UsersViewModel userViewModel = new(usersService);
