@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="webshopapp.View.PostNewsPage"
+             Title="PostNewsPage"
+             xmlns:model="clr-namespace:webshopapp.Models"
+             xmlns:viewmodel="clr-namespace:webshopapp.ViewModel"
+             x:DataType="viewmodel:NewsViewModel">
+
+    <Grid
+        
+        ColumnDefinitions="*, Auto"
+        ColumnSpacing="5"
+        RowDefinitions="100,*,Auto"
+        RowSpacing="0">
+
+         <ScrollView Grid.Column="0"
+                     Grid.Row="1">
+            <StackLayout>
+                <Label Text="Author"/>
+                <Entry Placeholder="Author"
+                       Text="{Binding Author}"/>
+                <Label Text="Date"/>
+                <DatePicker 
+                    MinimumDate="01/01/2022"
+                    MaximumDate="01/01/2099"
+                    Date="{Binding CreatedDate}" />
+                <Label Text="Title"/>
+                <Entry Placeholder="Title"
+                       Text="{Binding ArticleTitle}"/>
+                <Label Text="Article Text"/>
+                <Entry Placeholder="Article Text"
+                       Text="{Binding ArticleText}"/>
+
+             </StackLayout>
+         </ScrollView>
+        <Button Text="Post Article" 
+                    Command="{Binding PostArticleCommand}"
+                    CommandParameter="{Binding newsTest}"
+                    IsEnabled="True"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Style="{StaticResource ButtonOutline}"
+                    Margin="8"/>
+        <ActivityIndicator IsVisible="{Binding IsBusy}"
+                           IsRunning="{Binding IsBusy}"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           Grid.RowSpan="2"
+                           Grid.ColumnSpan="2"/>
+
+    </Grid>
+
+</ContentPage>

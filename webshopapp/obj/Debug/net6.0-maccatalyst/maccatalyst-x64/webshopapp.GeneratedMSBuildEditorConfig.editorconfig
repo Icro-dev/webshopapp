@@ -57,6 +57,24 @@ build_metadata.AdditionalFiles.ManifestResourceName = webshopapp.View.MainPage.x
 build_metadata.AdditionalFiles.TargetPath = View\MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = View\MainPage.xaml
 
+[H:/webshopapp/webshopapp/webshopapp/View/NewsDetailsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = webshopapp.View.NewsDetailsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\NewsDetailsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\NewsDetailsPage.xaml
+
+[H:/webshopapp/webshopapp/webshopapp/View/NewsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = webshopapp.View.NewsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\NewsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\NewsPage.xaml
+
+[H:/webshopapp/webshopapp/webshopapp/View/PostNewsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = webshopapp.View.PostNewsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\PostNewsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\PostNewsPage.xaml
+
 [H:/webshopapp/webshopapp/webshopapp/View/UsersManagePage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = webshopapp.View.UsersManagePage.xaml

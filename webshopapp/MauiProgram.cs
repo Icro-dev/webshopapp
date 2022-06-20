@@ -38,6 +38,13 @@ namespace webshopapp
             builder.Services.AddSingleton<CartRepository>();
             builder.Services.AddSingleton<CartItemRepository>();
 
+            builder.Services.AddTransient<NewsPage>();
+            builder.Services.AddTransient<NewsDetailsPage>();
+            builder.Services.AddSingleton<NewsViewModel>();
+            builder.Services.AddSingleton<NewsDetailsViewModel>();
+            builder.Services.AddSingleton<NewsService>();
+            builder.Services.AddTransient<PostNewsPage>();
+
             return builder.Build();
         }
     }

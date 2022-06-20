@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="webshopapp.View.NewsDetailsPage"
+             xmlns:viewmodel="clr-namespace:webshopapp.ViewModel"
+             x:DataType="viewmodel:NewsDetailsViewModel"
+             Title="{Binding News.Title}">
+
+    <ScrollView>
+        <Grid
+        ColumnDefinitions="*,Auto"
+        ColumnSpacing="5"
+        RowDefinitions="*,Auto,Auto"
+        RowSpacing="0">
+            <VerticalStackLayout>
+            <Grid ColumnDefinitions="*,Auto,*" RowDefinitions="160,Auto">
+                <BoxView
+                    Grid.ColumnSpan="3"
+                    Background="{StaticResource Primary}"
+                    HeightRequest="160"
+                    HorizontalOptions="FillAndExpand" />
+            </Grid>
+            
+            <VerticalStackLayout
+                  Grid.Column="1"
+                  Padding="10">
+                <HorizontalStackLayout Spacing="10">
+                    <Label Style="{StaticResource SmallLabel}" Text="{Binding News.Author, StringFormat='Author: {0}'}" />
+                    <Entry IsVisible="{Binding isAdmin}" Placeholder="{Binding News.Author}" Text="{Binding News.Author}"/>
+                    </HorizontalStackLayout>
+                <HorizontalStackLayout Spacing="10">
+                    <Label Style="{StaticResource SmallLabel}" Text="{Binding  News.Title, StringFormat='Title: {0}'}" />
+                        <Entry IsVisible="{Binding isAdmin}" Placeholder="{Binding News.Title}" Text="{Binding News.Title}"/>
+                    </HorizontalStackLayout>
+                <HorizontalStackLayout Spacing="10">
+                        <Label Style="{StaticResource SmallLabel}" Text="{Binding News.CreatedDate, StringFormat='Created on: {0}'}" />
+                        <DatePicker
+                        IsVisible="{Binding isAdmin}"    
+                        MinimumDate="01/01/2022"
+                        MaximumDate="01/01/2099"
+                        Date="{Binding News.CreatedDate}" />
+                    </HorizontalStackLayout>
+                <HorizontalStackLayout Spacing="10">
+                    <Label Style="{StaticResource LargeLabel}" HorizontalOptions="Center" LineBreakMode="WordWrap" MaxLines="500" WidthRequest="500" Text="{Binding News.ArticleText}"/>
+                        <Entry IsVisible="{Binding isAdmin}" Placeholder="{Binding News.ArticleText}" Text="{Binding News.ArticleText}"/>
+                    </HorizontalStackLayout>
+            </VerticalStackLayout>
+            
+        </VerticalStackLayout>
+            <Button 
+                IsVisible="{Binding isAdmin}"
+                Text="Update News" 
+                Command="{Binding UpdateNewsCommand}"
+                CommandParameter="{Binding News}"
+                IsEnabled="{Binding IsNotBusy}"
+                Grid.Row="1"
+                Grid.Column="0"
+                Style="{StaticResource ButtonOutline}"
+                Margin="2"/>
+            <Button 
+                IsVisible="{Binding isAdmin}"
+                Text="Delete News" 
+                Command="{Binding DeleteNewsCommand}"
+                CommandParameter="{Binding News}"
+                IsEnabled="{Binding IsNotBusy}"
+                Grid.Row="2"
+                Grid.Column="0"
+                Style="{StaticResource ButtonOutline}"
+                Margin="2"/>
+        </Grid>
+    </ScrollView>
+</ContentPage>
+

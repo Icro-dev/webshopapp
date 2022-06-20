@@ -54,4 +54,13 @@
                 Shell.NavBarIsVisible="true"/>
         </Tab>
     </FlyoutItem>
+    <FlyoutItem Title="News">
+        <Tab>
+            <ShellContent 
+                Title="News"
+                Route="NewsPage"
+                ContentTemplate="{DataTemplate View:NewsPage}"
+                Shell.NavBarIsVisible="true"/>
+        </Tab>
+    </FlyoutItem>
 </Shell>

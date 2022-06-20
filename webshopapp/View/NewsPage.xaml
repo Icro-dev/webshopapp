@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="webshopapp.View.NewsPage"
+             xmlns:model="clr-namespace:webshopapp.Models"
+             xmlns:viewmodel="clr-namespace:webshopapp.ViewModel"
+             x:DataType="viewmodel:NewsViewModel"
+             Title="{Binding Title}">
+
+    <Grid
+        ColumnDefinitions="*,Auto"
+        ColumnSpacing="5"
+        RowDefinitions="*,Auto, Auto"
+        RowSpacing="0">
+        <CollectionView
+                ItemsSource="{Binding NewsItems}"
+                SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:News">
+                    <Grid Padding="10">
+                        <Frame HeightRequest="250" Style="{StaticResource CardView}">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer
+                                     Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NewsViewModel}}, Path=GoToNewsDetailsCommand}"
+                                        CommandParameter="{Binding .}"/>
+                            </Frame.GestureRecognizers>
+                            <Grid Padding="0" ColumnDefinitions="50,Auto, Auto">
+                                <VerticalStackLayout
+                                    Grid.Column="1"
+                                    Padding="10">
+                                    <HorizontalStackLayout Spacing="10">
+                                        <Label Style="{StaticResource SmallLabel}" Text="{Binding Author, StringFormat='Author: {0}'}" />
+                                    </HorizontalStackLayout>
+                                    <HorizontalStackLayout Spacing="10">
+                                        <Label Style="{StaticResource SmallLabel}" Text="{Binding  Title, StringFormat='Title: {0}'}" />
+                                    </HorizontalStackLayout>
+                                    <HorizontalStackLayout Spacing="10">
+                                        <Label Style="{StaticResource SmallLabel}" Text="{Binding CreatedDate, StringFormat='Created on: {0}'}" />
+                                    </HorizontalStackLayout>
+                                    <HorizontalStackLayout Spacing="10">
+                                        <Label Style="{StaticResource MediumLabel}" LineBreakMode="WordWrap" MaxLines="5" WidthRequest="500" Text="{Binding ArticleText}"/>
+                                    </HorizontalStackLayout>
+                                </VerticalStackLayout>
+                            
+                            </Grid>
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Text="Get News" 
+                Command="{Binding GetNewsCommand}"
+                IsEnabled="{Binding IsNotBusy}"
+                Grid.Row="1"
+                Grid.Column="0"
+                Style="{StaticResource ButtonOutline}"
+                Margin="2"/>
+        <Button 
+                IsVisible="{Binding isAdmin}"
+                Text="Post new News Article" 
+                Command="{Binding ToPostPageCommand}"
+                IsEnabled="{Binding IsNotBusy}"
+                Grid.Row="2"
+                Grid.Column="0"
+                Style="{StaticResource ButtonOutline}"
+                Margin="2"/>
+
+
+        <ActivityIndicator IsVisible="{Binding IsBusy}"
+                           IsRunning="{Binding IsBusy}"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           Grid.RowSpan="2"
+                           Grid.ColumnSpan="2"/>
+    </Grid>
+</ContentPage>
