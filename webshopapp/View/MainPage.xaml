@@ -11,7 +11,7 @@
     <Grid
         ColumnDefinitions="*,Auto"
         ColumnSpacing="5"
-        RowDefinitions="*,Auto,Auto,Auto,Auto"
+        RowDefinitions="*,Auto,Auto"
         RowSpacing="0">
         <CollectionView
                 ItemsSource="{Binding Products}"
@@ -63,26 +63,6 @@
                                             HeightRequest="50"    
                                             Style="{StaticResource ButtonOutline}"
                                             Margin="2"/>
-                                    <Button Text="Add to wishlist"
-                                            FontSize="10"
-                                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ProductsViewModel}}, Path=AddProductToCartCommand}"
-                                            CommandParameter="{Binding .}"
-                                            Grid.Row="2"
-                                            Grid.Column="0"
-                                            WidthRequest="100"
-                                            HeightRequest="50"    
-                                            Style="{StaticResource ButtonOutline}"
-                                            Margin="2"/>
-                                    <Button Text="Compare"
-                                            FontSize="10"
-                                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ProductsViewModel}}, Path=AddProductToCartCommand}"
-                                            CommandParameter="{Binding .}"
-                                            Grid.Row="2"
-                                            Grid.Column="0"
-                                            WidthRequest="100"
-                                            HeightRequest="50"    
-                                            Style="{StaticResource ButtonOutline}"
-                                            Margin="2"/>
                                 </HorizontalStackLayout>
                             </Grid>
                         </Frame>
@@ -97,26 +77,11 @@
                 Grid.Column="0"
                 Style="{StaticResource ButtonOutline}"
                 Margin="2"/>
-        <Button Text="Add to wishlist" 
-                Command="{Binding GetProductsCommand}"
-                IsEnabled="{Binding IsNotBusy}"
-                Grid.Row="2"
-                Grid.Column="0"
-                Style="{StaticResource ButtonOutline}"
-                Margin="2"/>
-
-        <Button Text="Compare products" 
-                Command="{Binding GetProductsCommand}"
-                IsEnabled="{Binding IsNotBusy}"
-                Grid.Row="3"
-                Grid.Column="0"
-                Style="{StaticResource ButtonOutline}"
-                Margin="2"/>
 
         <Button Text="Get Products" 
                 Command="{Binding GetProductsCommand}"
                 IsEnabled="{Binding IsNotBusy}"
-                Grid.Row="4"
+                Grid.Row="2"
                 Grid.Column="0"
                 Style="{StaticResource ButtonOutline}"
                 Margin="2"/>

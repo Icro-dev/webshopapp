@@ -51,11 +51,13 @@ namespace webshopapp.Repositories
         public async Task<Cart> GetCart(long CartId)
         {
             await Init();
+            
             try
             {
 
                 var result = await conn.FindAsync<Cart>(CartId);
                 Debug.WriteLine(result);
+                return result;
             }
             catch (Exception ex)
             {

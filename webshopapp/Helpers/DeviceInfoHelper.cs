@@ -9,7 +9,7 @@ namespace webshopapp.Helpers
     public static class DeviceInfoHelper
     {
         public static string BaseAddress =
-           DeviceInfo.Platform == DevicePlatform.Android ? "http://10.0.2.2:7150" : "https://localhost:7150";
+           DeviceInfo.Platform == DevicePlatform.Android ? "http://10.0.2.2:7150" : "https://localhost:8081";
 
         public static string BaseUrl = $"{BaseAddress}/api";
     }

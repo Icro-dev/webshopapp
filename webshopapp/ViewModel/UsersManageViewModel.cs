@@ -19,7 +19,7 @@ namespace webshopapp.ViewModel
         public ObservableCollection<Users> Users { get; set; } = new();
         UsersService usersService;
 
-        public string username { get; set; }
+/*        public string username { get; set; }
         public string password { get; set; }
         public string role { get; set; }
         public double latitude { get; set; }
@@ -27,7 +27,7 @@ namespace webshopapp.ViewModel
         public string street { get; set; }
         public string houseNumber { get; set; }
         public string zipcode { get; set; }
-        public string city { get; set; }
+        public string city { get; set; }*/
 
         public UsersManageViewModel(UsersService userService)
         {
@@ -96,7 +96,7 @@ namespace webshopapp.ViewModel
         }
 
         [ICommand]
-        async void UpdateUser()
+        async void UpdateUser(Users user)
         {
             if (IsBusy)
                 return;

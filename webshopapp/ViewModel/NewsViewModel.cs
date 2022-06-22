@@ -23,7 +23,7 @@ namespace webshopapp.ViewModel
         public string ArticleText { get; set; }
         
         public DateTime CreatedDate { get; set; }
-        
+
 
         public News newsTest { get; set; }
 
